@@ -1,5 +1,5 @@
 @media only screen and (max-width: 600px) {
-    header a{
+    header a {
         display: inline-block;
     }
 
@@ -10,12 +10,22 @@
         display: none;
     }
 
-    ul.menu li{
+    ul.menu li {
         display: block;
     }
-    
-    ul.menu li a{
+
+    ul.menu li a {
         display: block;
+    }
+
+    article.cards div.row {
+        display: block;
+    }
+
+    article.cards div.card {
+        flex: none;
+        margin-right: 0;
+        margin-bottom: .5em;
     }
 
 }
