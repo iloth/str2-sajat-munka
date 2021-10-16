@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+    header a{
+        display: inline-block;
+    }
+
+    nav {
+        position: absolute;
+        right: 8px;
+        top: 6em;
+        display: none;
+    }
+
+    ul.menu li{
+        display: block;
+    }
+    
+    ul.menu li a{
+        display: block;
+    }
+
+}
