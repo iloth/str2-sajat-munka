@@ -75,6 +75,20 @@ footer a:hover {
 }
 
 
+/* flex */
+
+div.row {
+    display: flex;
+}
+
+div.col { 
+}
+
+div.col-3 {
+    flex: 33%;
+    width: 33%;
+}
+
 /* menu */
 
 ul.menu {
@@ -117,12 +131,7 @@ article.default img {
     width: 50%;
 }
 
-article.cards div.row {
-    display: flex;
-}
-
 article.cards div.card {
-    flex: 30%;
     border: 1px solid #333333;
     border-radius: 5px;
     box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
@@ -163,4 +172,46 @@ article.short div.image {
 
 article.short div.content {
     flex: auto;
+}
+
+article.gallery div.col {
+    margin: .5em;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    padding: .3em;
+}
+
+article.gallery div.col:first-child {
+    margin-left: 0;
+}
+
+article.gallery div.col:last-child {
+    margin-right: 0;
+}
+
+article.gallery div.col:empty {
+    visibility: hidden;
+}
+
+article.gallery img {
+    max-width: 100%;
+}
+
+article.gallery div.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+article.gallery div.wrapper img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
 }

@@ -18,12 +18,20 @@
         display: block;
     }
 
-    article.cards div.row {
+    /* flex */
+
+    div.row {
         display: block;
     }
 
-    article.cards div.card {
+    div.col, div.col-3 {
         flex: none;
+        width: auto;
+    }
+
+    /* articles */
+
+    article.cards div.card {
         margin-right: 0;
         margin-bottom: .5em;
     }
@@ -40,4 +48,10 @@
     article.short div.image img {
         width: 100%;
     }
+
+    article.gallery div.col {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
 }
