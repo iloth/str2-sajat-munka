@@ -81,9 +81,6 @@ div.row {
     display: flex;
 }
 
-div.col { 
-}
-
 div.col-33 {
     flex: 33%;
     width: 33%;
@@ -124,7 +121,7 @@ div.input {
     margin-top: 1em;
 }
 
-div.input label{
+div.input label {
     display: block;
     text-align: right;
     margin-right: 1em;
@@ -146,6 +143,7 @@ article p {
 article.default p {
     text-indent: 2em;
 }
+
 article.default img.initial {
     float: left;
     max-width: 10em;
