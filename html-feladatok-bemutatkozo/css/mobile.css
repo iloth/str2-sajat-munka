@@ -24,9 +24,17 @@
         display: block;
     }
 
-    div.col, div.col-3 {
+    div.col,
+    div.col-33,
+    div.col-66 {
         flex: none;
         width: auto;
+    }
+
+    /* form */
+
+    div.input label {
+        text-align: left;
     }
 
     /* articles */

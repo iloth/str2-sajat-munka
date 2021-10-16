@@ -29,3 +29,8 @@ function fullImage_click(){
     fullImg.src="";
     wrapper.style.display="none";
 }
+
+function message_onsubmit(e) {
+    e.preventDefault;
+    
+}

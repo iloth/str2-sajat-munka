@@ -84,9 +84,14 @@ div.row {
 div.col { 
 }
 
-div.col-3 {
+div.col-33 {
     flex: 33%;
     width: 33%;
+}
+
+div.col-66 {
+    flex: 66%;
+    width: 66%;
 }
 
 /* menu */
@@ -114,6 +119,24 @@ ul.menu li a:hover {
     border-color: #333333;
 }
 
+/* form */
+div.input {
+    margin-top: 1em;
+}
+
+div.input label{
+    display: block;
+    text-align: right;
+    margin-right: 1em;
+}
+
+div.input textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 800px;
+}
+
 /* article styles */
 
 article p {
@@ -123,8 +146,14 @@ article p {
 article.default p {
     text-indent: 2em;
 }
+article.default img.initial {
+    float: left;
+    max-width: 10em;
+    max-height: 10em;
+    margin-right: 1em;
+}
 
-article.default img {
+article.default img.big {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -136,10 +165,13 @@ article.cards div.card {
     border-radius: 5px;
     box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
     padding: .5em;
-    margin-right: 5%;
 }
 
-article.cards div.card:last-child {
+article.cards div.col {
+    margin-right: .5em;
+}
+
+article.cards div.col:last-child {
     margin-right: 0;
 }
 

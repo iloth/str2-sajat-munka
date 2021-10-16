@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <h1>Bemutatkozás</h1>
+        <h1>Magamról</h1>
         <a href="#" onclick="menubars_click()"><i class="fas fa-bars"></i></a>
     </header>
 
@@ -32,7 +32,81 @@
     </nav>
 
     <main>
+        <section>
+            <article class="default">
+                <img class="initial" src="img/Capsaicum.jpg" alt="Me">
+                <h2>Magyar hegyes erős</h2>
+                <p>A hazai zöld, hegyes, erős paprika a scoville skála szerint nem is annyira erős, ugyanakkor népszerű kiegészítője a vasárnapi húsleveseknek. Tulajdonképpen a kapszaicin felelős a paprika csípősségéért. Míg C-vitaminnal minden paprikafajta rendelkezik, kapszaicintartalma mondjuk a TV paprikának gyakorlatilag nulla. Annak megállapítása, hogy mennyire csípős egy adott típusú paprika, elég szubjektív. Vannak, akiknek már a magyar hegyes erős is kaparja a torkát, míg mások élvezettel fogyasztják akár a Jalapenot is.</p>
+                <p>Egy adott paprika csípősségét ezért az 1900-as évektől a scoville skálán mérik. Wilbur Scoville amerikai kémikus volt az, aki rájött, hogy a termésekben lévő kapszaicinkoncentrátumot hogyan lehet mérni. Innen ered az SHU, azaz a scoville mérték. 1990-től a paprikanemesítők egyre inkább azon munkálkodnak, hogy elnyerjék a legerősebb paprikaminősítést.</p>
+                <p>Ha azt gondoltad eddig, hogy a magyar paprikák elég erősek világviszonylatban, akkor sajnos van egy rossz hírem: nem azok. Átlagosan a magyar terméseknek 1000-2500 körül mozog az SHU tartalma, míg egy ütősebb Tabasco szósz elérheti a 7-8000-res SHU értéket. A paprika spray nagyjából 2 milliós SHU értékkel bír, és csak hogy el tudd képzelni: 1 millió SHU érték felett már a paprika felnyitásához is vegyvédelmi felszerelés és légzőkészülék kell.</p>
+                
+                <h2>Legerősebb chilik:</h2>
+                <ol>
+                    <li>Carolina Reaper (2,200,000 SHU)</li>
+                    <li>Trinidad Moruga Scorpion (2,009,231 SHU)</li>
+                    <li>7 Pot Douglah (1,853,936 SHU)</li>
+                    <li>7 Pot Primo (1,469,000 SHU)</li>
+                    <li>Trinidad Scorpion „Butch T” (1,463,700 SHU)</li>
+                </ol>
 
+                <h2>Fontosabb fajok:</h2>
+                <ul>
+                    <li>Capsicum annuum - Termesztett paprika (a hazai)</li>
+                    <li>Capsicum frutescens - Chili paprika</li>
+                    <li>Capsicum chinese - Kínai paprika</li>
+                    <li>Capsicum baccatum - Bogyós paprika</li>
+                    <li>Capsicum pubescens - Szőrös paprika</li>                    
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Üzenet</h2>
+                <p>Az alábbi form kitöltésével lehet üzenni a paprikának:</p>
+                <form action="index.html" onsubmit="message_onsubmit(event)">
+                    <div class="row input">
+                        <div class="col-33">
+                            <label for="name">Név:</label>
+                        </div>
+                        <div class="col-66">
+                            <input id="name" name="name" type="text" minlength="5" required>
+                        </div>
+                    </div>
+                   
+                    <div class="row input">
+                        <div class="col-33">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="col-66">
+                            <input id="email" name="email" type="email" minlength="5" required>
+                        </div>                        
+                    </div>
+                    
+                    <div class="row input">
+                        <div class="col-33">
+                            <label for="message">Üzenet:</label>
+                        </div>
+                        <div class="col-66">
+                            <textarea id="message" name="message" minlength="20" required> 
+                            </textarea>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row input">
+                        <div class="col-33">
+                            
+                        </div>
+                        <div class="col-66">
+                            <button><i class="fas fa-paper-plane"></i> Küldés</button>
+                        </div>
+                        
+                    </div>
+                    
+                </form>
+            </article>
+        </section>
     </main>
 
     <footer>
