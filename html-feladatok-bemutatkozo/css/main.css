@@ -43,6 +43,11 @@ main {
 
 section {
     background-color: #ffffff;
+    margin-bottom: 1em;
+}
+
+section:last-child {
+    margin-bottom: 0;
 }
 
 article {
@@ -97,8 +102,11 @@ ul.menu li a:hover {
 
 /* article styles */
 
-article.default p {
+article p {
     text-align: justify;
+}
+
+article.default p {
     text-indent: 2em;
 }
 
@@ -117,7 +125,7 @@ article.cards div.card {
     flex: 30%;
     border: 1px solid #333333;
     border-radius: 5px;
-    box-shadow: 5px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
     padding: .5em;
     margin-right: 5%;
 }
@@ -128,5 +136,31 @@ article.cards div.card:last-child {
 
 article.cards p {
     margin: 0;
-    text-align: justify;
+}
+
+article.short {
+    display: flex;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1em;
+}
+
+article.short:last-child {
+    margin-bottom: .5em;
+}
+
+article.short h4 {
+    margin: 0;
+}
+
+article.short div.image img {
+    width: 150px;
+}
+
+article.short div.image {
+    flex: 150px;
+    margin-right: 1em;
+}
+
+article.short div.content {
+    flex: auto;
 }

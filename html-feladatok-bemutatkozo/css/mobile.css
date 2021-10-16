@@ -28,4 +28,16 @@
         margin-bottom: .5em;
     }
 
+    article.short {
+        display: block;
+    }
+
+    article.short div.image {
+        flex: none;
+        margin-right: 0;
+    }
+
+    article.short div.image img {
+        width: 100%;
+    }
 }
