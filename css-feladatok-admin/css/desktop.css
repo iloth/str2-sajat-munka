@@ -1,0 +1,42 @@
+@media screen and (min-width: 600px) {
+    .header--dark {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .header__title {
+        display: inline;
+    }
+
+    .main__nav {
+        width: 250px;
+    }
+
+    .menu__label,
+    .menu__item {
+        display: block;
+    }
+
+    .menu__item span {
+        display: inline;
+    }
+
+    .menu__item .caret--right {
+        float: right;
+        line-height: 3rem;
+        display: inline;
+    }
+
+    .main__cards {
+        display: flex;
+    }
+
+    .main__card {
+        flex: 25%;
+        margin-right: 1rem;
+    }
+
+    .main__card:last-child {
+        margin-right: 0;
+    }
+}

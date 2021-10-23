@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+    <header class="header--dark">
+        <h3 class="header__title">Admin Page</h3>
+        <div class="header__menu">
+            <a href="#" class="menu__item" title="Personal"><i class="fa fa-user"></i> <i
+                    class="caret--down fa fa-caret-down"></i></a>
+        </div>
+        <div class="header__search">
+            <form action="#">
+                <input class="search__input" type="text" id="search_text" name="search_text" />
+                <button class="search__btn" id="search_button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <aside>
+            <nav class="main__nav">
+                <ul class="nav__ul">
+                    <li><a href="#" class="menu__label"><span>Core</span></a></li>
+                    <li><a href="#" class="menu__item menu__item--active" title="Dashboard"><i
+                                class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#" class="menu__label"><span>Interface</span></a></li>
+                    <li><a href="#" class="menu__item" title="Layout"><i class="fa fa-window-restore"></i>
+                            <span>Layout</span> <i class="caret--right fa fa-chevron-right"></i></a></li>
+                    <li><a href="#" class="menu__item" title="Pages"><i class="fa fa-file"></i> <span>Pages</span> <i
+                                class="caret--right fa fa-chevron-right"></i></a></li>
+                    <li><a href="#" class="menu__label"><span>Addons</span></a></li>
+                    <li><a href="#" class="menu__item" title="Charts"><i class="fa fa-bar-chart"></i>
+                            <span>Charts</span></a></li>
+                    <li><a href="#" class="menu__item" title="Tables"><i class="fa fa-table"></i>
+                            <span>Tables</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="content">
+            <h1>Dashboard</h1>
+            <div class="main__breadcrumb">
+                <a href="#" class="breadcrumb__item">Dashboard</a>
+            </div>
+            <div class="main__cards">
+                <div class="main__card main__card--blue">
+                    <div class="card__top">Primary Card</div>
+                    <div class="card__bottom">
+                        <span>View Details</span><i class="caret--right fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="main__card main__card--yellow">
+                    <div class="card__top">Warning Card</div>
+                    <div class="card__bottom">
+                        <span>View Details</span><i class="caret--right fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="main__card main__card--green">
+                    <div class="card__top">Success Card</div>
+                    <div class="card__bottom">
+                        <span>View Details</span><i class="caret--right fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="main__card main__card--red">
+                    <div class="card__top">Danger Card</div>
+                    <div class="card__bottom">
+                        <span>View Details</span><i class="caret--right fa fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
