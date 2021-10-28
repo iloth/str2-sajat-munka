@@ -1,4 +1,5 @@
 const modalOverlay = document.querySelector(".modal__overlay");
+const modalMain = document.querySelector(".modal__main");
 const modalTitle = modalOverlay.querySelector(".modal__title");
 const modalContent = modalOverlay.querySelector(".modal__content");
 const modalClose = modalOverlay.querySelector(".modal__close");
@@ -31,16 +32,23 @@ function openModal({
 
     modalCallBackFunction = onClose;
 
+    modalMain.classList.remove("modal__main--closing");
     modalOverlay.style.display = "block";
     modalOk.focus();
 }
 
 function closeModal(source) {
-    if (modalCallBackFunction) {
-        modalCallBackFunction(source);
-    }
+    modalMain.classList.add("modal__main--closing");
 
-    modalOverlay.style.display = "none";
+    setTimeout(() => {
+        modalOverlay.style.display = "none";
+        modalMain.classList.remove("modal__main--closing");
+        
+        if (modalCallBackFunction) {
+                modalCallBackFunction(source);
+            }
+    }, 600);
+
 }
 
 function modalMainClick(e) {

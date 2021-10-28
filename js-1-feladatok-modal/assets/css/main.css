@@ -6,6 +6,15 @@ fieldset p input {
     flex: auto;
 }
 
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
 /* Modal */
 
 .modal__overlay{
@@ -28,6 +37,13 @@ fieldset p input {
     background-color: #ffffff;
     border: #aaaaaa 2px double;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn linear .5s;
+}
+
+.modal__main--closing {
+    animation: fadeOut linear .5s;
 }
 
 .modal__header {
@@ -58,11 +74,12 @@ fieldset p input {
     border-bottom: 1px solid #d3d3d3;
     text-align: justify;
     overflow-y: auto;
-    max-height: 50%;
+    flex: auto;
 }
 
 .modal__footer {
     padding: .5em;
+    text-align: right;
 }
 
 .button--main {
