@@ -12,16 +12,36 @@
     <link rel="stylesheet" href="assets/css/mobile.css">
  
     <script src="https://kit.fontawesome.com/12951674e4.js" crossorigin="anonymous"></script>
-    <script src="assets/js/modal.js"></script>
-    <script src="assets/js/main.js"></script>
 
 </head>
 <body>
     <main>
-        <button class="show" onclick="modalOpen('Title Example', '<p>Content Example</p>')">Show Modal</button>
+        <fieldset>
+            <legend>Without Parameters</legend>
+            <button class="show" onclick="openModal()">Open</button>
+        </fieldset>
+        <fieldset>
+            <legend>With Parameters</legend>
+            <p>
+                <button class="show" onclick="openModal({title: 'Title Example'})">Open</button>
+                <input type="text" readonly value="openModal({title: 'Title Example'})"> 
+            </p>
+            <p>
+                <button class="show" onclick="openModal({title: 'Title Example', content: '<p>Content Example</p>'})">Open</button>
+                <input type="text" readonly value="openModal({title: 'Title Example', content: '&lt;p&gt;Content Example&lt;/p&gt;'})"> 
+            </p>
+            <p>
+                <button class="show" onclick="openModal({showClose: false, showCancel: false, closeOnBgClick: false})">Open</button>
+                <input type="text" readonly value="openModal({showClose: false, showCancel: false, closeOnBgClick: false})"> 
+            </p>
+            <p>
+                <button class="show" onclick="openModal({showCancel: false}, (closeReason) => { console.log(closeReason); })">Open</button>
+                <input type="text" readonly value="openModal({showCancel: false}, (closeReason) => { console.log(closeReason); })"> 
+            </p>
+        </fieldset>
     </main>
 
-    <div class="modal__background" onclick="modalBackgroundClick()">
+    <div class="modal__overlay" onclick="modalBackgroundClick()" style="display:none;">
         <div class="modal__main" onclick="modalMainClick(event)">
             <div class="modal__header">
                 <h3 class="modal__title">title</h3>
@@ -36,5 +56,9 @@
             </div>
         </div>
     </div>
+
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 </html>

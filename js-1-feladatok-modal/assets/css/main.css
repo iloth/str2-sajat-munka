@@ -1,4 +1,14 @@
-.modal__background{
+fieldset p {
+    display: flex;
+}
+
+fieldset p input {
+    flex: auto;
+}
+
+/* Modal */
+
+.modal__overlay{
     position: fixed;
     top: 0;
     left: 0;
@@ -47,6 +57,8 @@
     padding: .5em;
     border-bottom: 1px solid #d3d3d3;
     text-align: justify;
+    overflow-y: auto;
+    max-height: 50%;
 }
 
 .modal__footer {
