@@ -45,9 +45,9 @@ function closeModal(source) {
         modalMain.classList.remove("modal__main--closing");
         
         if (modalCallBackFunction) {
-                modalCallBackFunction(source);
-            }
-    }, 600);
+            modalCallBackFunction(source);
+        }
+    }, 480);
 
 }
 
