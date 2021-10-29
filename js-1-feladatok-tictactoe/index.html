@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/mobile.css" />
+
+    <script src="https://kit.fontawesome.com/12951674e4.js" crossorigin="anonymous"></script>
+
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <header class="header--dark">
+        <h1>Tic-Tac-Toe in JS</h1>
+    </header>
+    <main>
+        <div class="board">
+            <div class="cell" id="cell-1-1"></div>
+            <div class="cell" id="cell-1-2"></div>
+            <div class="cell" id="cell-1-3"></div>
+            <div class="cell" id="cell-2-1"></div>
+            <div class="cell" id="cell-2-2"></div>
+            <div class="cell" id="cell-2-3"></div>
+            <div class="cell" id="cell-3-1"></div>
+            <div class="cell" id="cell-3-2"></div>
+            <div class="cell" id="cell-3-3"></div>
+        </div>
+        <div class="messages">
+            <div class="player">Player <span class="player__span"></span> is coming.</div>
+            <div class="winner" style="display: none;">Congratulation! Player <span class="winner__span"></span> won the game!</div>
+            <div class="draw" style="display: none;">Match end. There is no more space on the table.</div>
+        </div>
+        <div class="buttons">
+            <button class="button--default" onclick="tictactoe.clear()">Restart</button>
+        </div>
+    </main>
+    <footer class="footer--dark">
+        <span class="footer__sign">by Loti</span>
+    </footer>
+</body>
+
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript">
+    tictactoe.init(document, ".board");
+</script>
+
+</html>
