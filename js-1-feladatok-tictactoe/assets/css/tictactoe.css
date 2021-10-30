@@ -1,0 +1,36 @@
+.tictactoe__board {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto;
+    height: 320px;
+    width: 320px;
+}
+
+.tictactoe__cell {
+    background-color: #cecece;
+    height: 100px;
+    line-height: 100px;
+    width: 100px;
+    font-size: xxx-large;
+    text-align: center;
+    font-family: system-ui;
+    user-select: none;
+}
+
+.tictactoe__cell:empty:hover {
+    cursor: pointer;
+}
+
+.tictactoe__cell.win {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%   { color: initial; }
+    50%  { color: red; }
+    100% { color: initial;}
+}
+
+.tictactoe__messages {
+    padding: 0.5em;
+}

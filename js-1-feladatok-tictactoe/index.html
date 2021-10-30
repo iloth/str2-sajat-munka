@@ -8,9 +8,7 @@
 
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/mobile.css" />
-
-    <script src="https://kit.fontawesome.com/12951674e4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/tictactoe.css" />
 
     <title>Tic-Tac-Toe</title>
 </head>
@@ -20,24 +18,28 @@
         <h1>Tic-Tac-Toe in JS</h1>
     </header>
     <main>
-        <div class="board">
-            <div class="cell" id="cell-1-1"></div>
-            <div class="cell" id="cell-1-2"></div>
-            <div class="cell" id="cell-1-3"></div>
-            <div class="cell" id="cell-2-1"></div>
-            <div class="cell" id="cell-2-2"></div>
-            <div class="cell" id="cell-2-3"></div>
-            <div class="cell" id="cell-3-1"></div>
-            <div class="cell" id="cell-3-2"></div>
-            <div class="cell" id="cell-3-3"></div>
-        </div>
-        <div class="messages">
-            <div class="player">Player <span class="player__span"></span> is coming.</div>
-            <div class="winner" style="display: none;">Congratulation! Player <span class="winner__span"></span> won the game!</div>
-            <div class="draw" style="display: none;">Match end. There is no more space on the table.</div>
-        </div>
-        <div class="buttons">
-            <button class="button--default" onclick="tictactoe.clear()">Restart</button>
+        <div id="tictactoe">
+            <div class="tictactoe__board">
+                <div class="tictactoe__cell" data-coord="1-1"></div>
+                <div class="tictactoe__cell" data-coord="1-2"></div>
+                <div class="tictactoe__cell" data-coord="1-3"></div>
+                <div class="tictactoe__cell" data-coord="2-1"></div>
+                <div class="tictactoe__cell" data-coord="2-2"></div>
+                <div class="tictactoe__cell" data-coord="2-3"></div>
+                <div class="tictactoe__cell" data-coord="3-1"></div>
+                <div class="tictactoe__cell" data-coord="3-2"></div>
+                <div class="tictactoe__cell" data-coord="3-3"></div>
+            </div>
+            <div class="tictactoe__messages">
+                <div class="tictactoe__player">Player <span class="tictactoe__player__span"></span> is coming.</div>
+                <div class="tictactoe__winner" style="display: none;">Congratulation! Player <span
+                        class="tictactoe__winner__span"></span> won the game!</div>
+                <div class="tictactoe__draw" style="display: none;">Match end. There is no more space on the table.
+                </div>
+            </div>
+            <div class="tictactoe__buttons">
+                <button class="button--default" onclick="tictactoe.clear()">Restart</button>
+            </div>
         </div>
     </main>
     <footer class="footer--dark">
@@ -45,9 +47,9 @@
     </footer>
 </body>
 
-<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/tictactoe.js"></script>
 <script type="text/javascript">
-    tictactoe.init(document, ".board");
+    tictactoe.init(document.getElementById("tictactoe"));
 </script>
 
 </html>
