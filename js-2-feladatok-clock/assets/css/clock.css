@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Cyberverse;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/cyberverse/Cyberverse.otf") format("opentype");
+}
+
+.clock__main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.clock__screen {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.clock__screen div {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 13vw;
+    color: cyan;
+    font-family: Cyberverse;
+}
+
+.clock__hour {
+    width: 25%;
+    text-align: right;
+}
+
+.clock__minute {
+    width: 25%;
+    text-align: center;
+}
+
+.clock__second {
+    width: 25%;
+    text-align: left;
+}
+
+.clock__separator {
+    width: 12.5%;
+    text-align: center;
+}
