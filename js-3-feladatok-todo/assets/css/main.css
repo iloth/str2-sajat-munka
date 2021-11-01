@@ -1,6 +1,8 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: #9e9e9e;
+    min-width: 400px;
 }
 
 header {
@@ -31,15 +33,24 @@ footer {
     color: #cecece;
 }
 
+
 .button--blue, 
-.button--red {
+.button--red,
+.button--link {
     line-height: 46px;
     border-radius: 4px;
     font-size: 1.5rem;
 }
 
 .button--blue {
+    background-color: #5555ff;
+    border: 1px solid #0000ff;
+    color: #ffffff;
+}
 
+.button--blue:hover {
+    background-color: #2222ff;
+    cursor: pointer;
 }
 
 .button--red {
@@ -49,6 +60,16 @@ footer {
 }
 
 .button--red:hover {
-    background-color: #ff0000;
+    background-color: #ff2222;
     cursor: pointer;
+}
+
+.button--link {
+    border: none;
+    background-color: transparent;
+}
+
+.button--link:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

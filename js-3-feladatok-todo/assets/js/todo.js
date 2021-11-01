@@ -13,6 +13,9 @@ const todo = {
     _completedLst: document.querySelector(".todo__completed__list"),
     _completedLbl: document.querySelector(".todo__completed__label"),
     _chillDiv: document.querySelector(".todo__chill"),
+    _buttonsDiv: document.querySelector(".todo__buttons"),
+    _hideCompleteBtn: document.querySelector(".todo__hide__button"),
+    _hideComplete: false,
 
     init() {
         const lang = navigator.languages ? navigator.languages[0] : navigator.language;
@@ -34,13 +37,21 @@ const todo = {
 
     _refreshHtml() {
         if (this._dataBase.length == 0) {
-            this._chillDiv.style.display = "initial";
+            this._chillDiv.style.display = "block";
             this._pendingDiv.style.display = "none";
             this._completedDiv.style.display = "none";
+            this._buttonsDiv.style.display = "none";
         } else {
             this._chillDiv.style.display = "none";
-            this._pendingDiv.style.display = "initial";
-            this._completedDiv.style.display = "initial";
+            this._pendingDiv.style.display = "block";
+            if (this._hideComplete) {
+                this._hideCompleteBtn.textContent = "Show Completes";
+                this._completedDiv.style.display = "none";
+            } else {
+                this._hideCompleteBtn.textContent = "Hide Completes";
+                this._completedDiv.style.display = "block";
+            }
+            this._buttonsDiv.style.display = "block";
 
             const pending = this._dataBase.filter((item) => !item.completed).length;
             this._pendingLbl.textContent = `You have ${pending} pending items`;
@@ -57,7 +68,7 @@ const todo = {
                 <label class="todo__item__label" for="todo_input_${item.id}">
                     <input class="todo__item__checkbox" type="checkbox" id="todo_input_${item.id}"${item.completed ? " checked" : ""}>
                     ${item.text}
-                    <button class="todo__item__button"><i class="fas fa-trash-alt"></i></button>
+                    <button class="todo__item__button button--red"><i class="fas fa-trash-alt"></i></button>
                 </label>
             </div>`;
         let element = temp.firstElementChild;
@@ -74,16 +85,20 @@ const todo = {
         })
     },
 
+    _removeListItem(item) {
+        const listItem = document.getElementById(`todo_${item.id}`);
+        listItem.remove();
+    },
+
     _itemInputClick(e, id) {
         e.stopPropagation();
-        const item = document.getElementById(`todo_${id}`);
         const chb = document.getElementById(`todo_input_${id}`);
 
         const index = this._dataBase.findIndex((item) => item.id == id);
         if(index > -1) {
             this._dataBase[index].completed = chb.checked;
             storage.setItemObject(this._storageKey, this._dataBase);
-            item.remove();
+            this._removeListItem(this._dataBase[index]);
             this._addListItem(this._dataBase[index]);
             this._refreshHtml();
         }
@@ -91,13 +106,13 @@ const todo = {
 
     _itemDeleteClick(e, id) {
         e.stopPropagation();
-        const item = document.getElementById(`todo_${id}`);
+        
         const index = this._dataBase.findIndex((item) => item.id == id);
 
         if (index > -1) {
+            this._removeListItem(this._dataBase[index]);
             this._dataBase.splice(index, 1);
             storage.setItemObject(this._storageKey, this._dataBase);
-            item.remove();
             this._refreshHtml();
         }
     },
@@ -115,5 +130,19 @@ const todo = {
             this._addInput.value = "";
             this._refreshHtml();
         }
-    }
+    },
+
+    toggleComplete() {
+        this._hideComplete = !this._hideComplete;
+        this._refreshHtml();
+    },
+
+    clearAll() {
+        this._dataBase.forEach((item) => {
+            this._removeListItem(item);
+        });
+        this._dataBase = [];
+        storage.setItemObject(this._storageKey, this._dataBase);
+        this._refreshHtml();
+    },
 }

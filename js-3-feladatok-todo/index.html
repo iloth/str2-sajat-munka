@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/todo.css">
+    <link rel="stylesheet" href="assets/css/todo-mobile.css">
+
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
 
     <script src="https://kit.fontawesome.com/12951674e4.js" crossorigin="anonymous"></script>
@@ -20,7 +22,7 @@
     </header>
     <main>
         <div class="todo">
-            <header class="todo__header"><h3>Daily To-Do List Manager</h3></header>
+            <header class="todo__header"><h2>Daily To-Do List Manager</h2></header>
             <div class="todo__main">
                 <div class="todo__date"></div>
                 <div class="todo__add">
@@ -42,8 +44,8 @@
                     <span class="todo__chill__label">Time to chill! You have no todos.</span>
                 </div>
                 <div class="todo__buttons">
-                    <button class="todo__hide__button button--link">Hide Complete</button>
-                    <button class="todo__clear__button button--link">Clear All</button>
+                    <button class="todo__hide__button button--link" onclick="todo.toggleComplete()">Hide Complete</button>
+                    <button class="todo__clear__button button--link" onclick="todo.clearAll()">Clear All</button>
                 </div>
             </div>
         </div>

@@ -1,3 +1,40 @@
+.todo {
+    width: 50%;
+    min-height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.todo__header {
+    text-align: center;
+}
+
+.todo__main {
+    background-color: #fcfcfc;
+    padding: 10px;
+    border-radius: 10px; 
+    height: 100%;
+}
+
+.todo__add {
+    display: flex;
+    margin-top: 10px;
+}
+
+.todo__add__input {
+    line-height: 46px;
+    border: 1px solid #cecece;
+    outline: 0;
+    flex:auto;
+    margin-right: 5px;
+    font-size: 1.2rem;
+    min-width: 0;
+}
+
+.todo__add__button {
+    width: 75px;
+}
+
 .todo__item {
     height: 50px;
     background-color: #cecece;
@@ -14,6 +51,9 @@
     font-size: 1.5em;
     width: 100%;
     display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .todo__item__button {
@@ -25,3 +65,29 @@
 .todo__item:hover .todo__item__button {
     display: initial;
 } 
+
+.todo__pending,
+.todo__completed{
+    margin-top: 15px;
+}
+
+.todo__pending__list,
+.todo__completed__list {
+    margin-top: 5px;
+}
+
+.todo__completed__list .todo__item__label {
+    text-decoration: line-through;
+}
+
+.todo__chill {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.todo__chill_icon {
+    width: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
