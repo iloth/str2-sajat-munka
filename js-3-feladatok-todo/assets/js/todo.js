@@ -1,7 +1,7 @@
 'use strict'
 
 const todo = {
-    _storageKey: "todo_items", 
+    _storageKey: "todo_items",
     _dataBase: [],
     _dateDiv: document.querySelector(".todo__date"),
     _addInput: document.querySelector(".todo__add__input"),
@@ -24,7 +24,7 @@ const todo = {
             dateStyle: 'full'
         }).format(now);
 
-        if(storage.exists(this._storageKey)) {
+        if (storage.exists(this._storageKey)) {
             this._dataBase = storage.getItemObject(this._storageKey);
         }
 
@@ -55,7 +55,7 @@ const todo = {
 
             const pending = this._dataBase.filter((item) => !item.completed).length;
             this._pendingLbl.textContent = `You have ${pending} pending items`;
-    
+
             const completed = this._dataBase.filter((item) => item.completed).length;
             this._completedLbl.textContent = `Completed items: ${Math.round(100 * completed / this._dataBase.length)}%`
         }
@@ -64,7 +64,7 @@ const todo = {
     _addListItem(item) {
         let temp = document.createElement("temp");
         temp.innerHTML = html `
-            <div class="todo__item" id="todo_${item.id}">
+            <div class="todo__item closed" id="todo_${item.id}">
                 <label class="todo__item__label" for="todo_input_${item.id}">
                     <input class="todo__item__checkbox" type="checkbox" id="todo_input_${item.id}"${item.completed ? " checked" : ""}>
                     ${item.text}
@@ -82,12 +82,18 @@ const todo = {
         });
         element.querySelector(".todo__item__button").addEventListener("click", (e) => {
             this._itemDeleteClick(e, item.id);
-        })
+        });
+        setTimeout(() => {
+            element.classList.remove("closed");
+        }, 1);
     },
 
     _removeListItem(item) {
         const listItem = document.getElementById(`todo_${item.id}`);
-        listItem.remove();
+        listItem.classList.add("closed");
+        setTimeout(() => {
+            listItem.remove();
+        }, 1000);
     },
 
     _itemInputClick(e, id) {
@@ -95,7 +101,7 @@ const todo = {
         const chb = document.getElementById(`todo_input_${id}`);
 
         const index = this._dataBase.findIndex((item) => item.id == id);
-        if(index > -1) {
+        if (index > -1) {
             this._dataBase[index].completed = chb.checked;
             storage.setItemObject(this._storageKey, this._dataBase);
             this._removeListItem(this._dataBase[index]);
@@ -106,7 +112,7 @@ const todo = {
 
     _itemDeleteClick(e, id) {
         e.stopPropagation();
-        
+
         const index = this._dataBase.findIndex((item) => item.id == id);
 
         if (index > -1) {
@@ -122,7 +128,11 @@ const todo = {
 
         if (this._addInput.value.trim()) {
             const id = Math.round(Math.random() * 9999999).toString().padStart(7, "0");
-            const item = {id: id, text: this._addInput.value, completed: false};
+            const item = {
+                id: id,
+                text: this._addInput.value,
+                completed: false
+            };
 
             this._dataBase.push(item);
             storage.setItemObject(this._storageKey, this._dataBase);

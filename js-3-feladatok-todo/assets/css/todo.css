@@ -12,7 +12,7 @@
 .todo__main {
     background-color: #fcfcfc;
     padding: 10px;
-    border-radius: 10px; 
+    border-radius: 10px;
     height: 100%;
 }
 
@@ -25,7 +25,7 @@
     line-height: 46px;
     border: 1px solid #cecece;
     outline: 0;
-    flex:auto;
+    flex: auto;
     margin-right: 5px;
     font-size: 1.2rem;
     min-width: 0;
@@ -36,10 +36,10 @@
 }
 
 .todo__item {
-    height: 50px;
     background-color: #cecece;
     padding-left: 15px;
     margin-bottom: 5px;
+    transition: margin-bottom .5s linear
 }
 
 .todo__item__checkbox {
@@ -48,12 +48,23 @@
 
 .todo__item__label {
     line-height: 50px;
+    height: 50px;
     font-size: 1.5em;
     width: 100%;
     display: block;
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: height .5s linear, line-height .5s linear;
+}
+
+.todo__item.closed {
+    margin-bottom: 0px;
+}
+
+.todo__item.closed .todo__item__label {
+    height: 0;
+    line-height: 20px;
 }
 
 .todo__item__button {
@@ -64,10 +75,10 @@
 
 .todo__item:hover .todo__item__button {
     display: initial;
-} 
+}
 
 .todo__pending,
-.todo__completed{
+.todo__completed {
     margin-top: 15px;
 }
 
