@@ -1,0 +1,27 @@
+.todo__item {
+    height: 50px;
+    background-color: #cecece;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+.todo__item__checkbox {
+    transform: scale(1.5);
+}
+
+.todo__item__label {
+    line-height: 50px;
+    font-size: 1.5em;
+    width: 100%;
+    display: block;
+}
+
+.todo__item__button {
+    width: 75px;
+    float: right;
+    display: none;
+}
+
+.todo__item:hover .todo__item__button {
+    display: initial;
+} 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/todo.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+    <script src="https://kit.fontawesome.com/12951674e4.js" crossorigin="anonymous"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/storage.js"></script>
+</head>
+<body>
+    <header class="header--dark">
+        <h1>To-Do list in JS</h1>
+    </header>
+    <main>
+        <div class="todo">
+            <header class="todo__header"><h3>Daily To-Do List Manager</h3></header>
+            <div class="todo__main">
+                <div class="todo__date"></div>
+                <div class="todo__add">
+                    <input class="todo__add__input" type="text" placeholder="Take the garbage out">
+                    <button class="todo__add__button button--blue"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="todo__pending">
+                    <span class="todo__pending__label">You have 0 pending items</span>
+                    <div class="todo__pending__list">
+                    </div>
+                </div>
+                <div class="todo__completed">
+                    <span class="todo__completed__label">Completed items: 0%</span>
+                    <div class="todo__completed__list">                        
+                    </div>
+                </div>
+                <div class="todo__chill">
+                    <img class="todo__chill_icon" src="assets/img/dice_icon.png" alt="Dice" />
+                    <span class="todo__chill__label">Time to chill! You have no todos.</span>
+                </div>
+                <div class="todo__buttons">
+                    <button class="todo__hide__button button--link">Hide Complete</button>
+                    <button class="todo__clear__button button--link">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer--dark">
+        <span class="footer__sign">by Loti</span>
+    </footer>
+
+    <script src="assets/js/todo.js"></script>
+    <script>
+        todo.init();
+    </script>
+</body>
+</html>
