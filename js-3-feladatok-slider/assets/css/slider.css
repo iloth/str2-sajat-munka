@@ -1,0 +1,83 @@
+.slider__main {
+  position: relative;
+  background-color: lightgray;
+}
+
+.slider__images {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow-y: hidden;
+}
+
+.slider__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  transition: opacity .5s ease-in-out;
+}
+
+.slider__image--current {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.slider__caption {
+  position: absolute;
+  bottom: 1.5em;
+  padding-left: .5em;
+  padding-top: .2em;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.slider__dots {
+  position: absolute;
+  bottom: -2em;
+  text-align: center;
+  width: 100%;
+  color: black;
+}
+
+.slider__dot {
+  margin-left: .2em;
+  margin-right: .2em;
+}
+
+.slider__dot:hover {
+  cursor: pointer;
+}
+
+.slider__chevron {
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  width: 20%;
+  height: 100%;
+  color: white;
+  background-color: rgba(1, 1, 1, .2);
+  display: table;
+  opacity: 0;
+}
+.slider__chevron:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider__chevron--left {
+  left: 0px;
+}
+
+.slider__chevron--right {
+  right: 0px;
+}
+
+.slider__chevron i {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
