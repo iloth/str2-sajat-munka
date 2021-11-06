@@ -22,30 +22,11 @@
     font-size: 0;
 }
 
-.clock__screen div {
-    display: inline-block;
+.clock__label {
+    display: block;
     overflow: hidden;
-    font-size: 13vw;
+    font-size: 14vw;
     color: cyan;
     font-family: Cyberverse;
-}
-
-.clock__hour {
-    width: 25%;
-    text-align: right;
-}
-
-.clock__minute {
-    width: 25%;
-    text-align: center;
-}
-
-.clock__second {
-    width: 25%;
-    text-align: left;
-}
-
-.clock__separator {
-    width: 12.5%;
     text-align: center;
 }
