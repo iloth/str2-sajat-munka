@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pairing Game</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <main>
+    <header class="game__header">
+      <h1 class="game__header__title">JS Pairing Game</h1>
+      <details class="game__header__details">
+        <summary>Click any card to start</summary>
+        <p>On the game board, there are always two identical images. Start the game by flipping a card. Then try to find
+          another card that has the same image as the first. If you can't find a pair, the flipped cards will be flipped
+          back with the face down. Try to remember these images as it becomes easier to find pairs the longer you play.
+          When you find a pair they are remained on the board and when you find all the pairs in this memory, you have
+          completed the level.</p>
+      </details>
+
+    </header>
+    <section class="game__timer">
+      <span class="timer__label">00:00</span>
+    </section>
+    <section class="game__board">
+      <div class="board__row board__row--1">
+        <div class="board__col" data-position="1-1">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="1-2">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="1-3">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="1-4">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="1-5">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+      </div>
+      <div class="board__row board__row--2">
+        <div class="board__col" data-position="2-1">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="2-2">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="2-3">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="2-4">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+        <div class="board__col" data-position="2-5">
+          <img src="assets/img/card_back.png" alt="Background" class="card__background">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+<script type="module" src="assets/js/main.js"></script>
+
+</html>

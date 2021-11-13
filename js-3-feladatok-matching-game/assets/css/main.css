@@ -1,0 +1,91 @@
+main {
+  background-color: #cecece;
+}
+
+.game__header {
+  text-align: center;
+}
+
+.game__header__details summary {
+  font-size: 2em;
+}
+
+.game__timer {
+  text-align: center;
+}
+
+.timer__label {
+  font-size: 2em;
+}
+
+.game__board {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board__row {
+  display: flex;
+  padding: 5px;
+}
+
+.board__col {
+  position: relative;
+  width: 20%;
+  aspect-ratio: 1;
+  margin: 5px;
+
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.board__col.card--flipped {
+  animation: cardFlip .275s forwards linear;
+}
+
+.board__col.card--unflip {
+  animation: cardUnFlip .275s forwards linear;
+}
+
+@keyframes cardFlip {
+  0% {
+    transform: rotateZ(0deg) rotateY(180deg);
+  } 
+  50% {
+    transform: rotateZ(-10deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }  
+}
+
+@keyframes cardUnFlip {
+  0% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  } 
+  50% {
+    transform: rotateZ(-10deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateZ(0deg) rotateY(180deg);
+  }
+  
+}
+
+.card__background, .card__foreground {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: 5px 5px 2px #888888f0, -2px -1px 1px #888888f0;
+}
+
+.card__background {
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.card__foreground {
+  z-index: 4;
+}
