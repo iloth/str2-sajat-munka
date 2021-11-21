@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Game of Throns</title>
+
+  <script src="https://kit.fontawesome.com/12951674e4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main class="main_grid">
+    <section class="left">
+      <div class="portraits">
+
+      </div>
+    </section>
+    <section class="right">
+      <div class="title">
+        Game Of Thrones
+      </div>
+      <section class="details">
+        <div class="details__picture">
+          <img alt="Picture" style="display: none;" />          
+        </div>
+        <div class="details__name"></div>
+        <div class="details__house">
+          <img alt="House" style="display: none;" />
+        </div>  
+        <div class="details__bio"></div>
+      </section>
+      <form onsubmit="search(event)" target="#">
+        <section class="search">
+          <div class="search__alive">
+            <input type="radio" name="search_alive" id="search_alive-yes" value="true" checked />
+            <label for="search_alive-yes">Alive</label>
+            <input type="radio" name="search_alive" id="search_alive-no" value="false" />
+            <label for="search_alive-no">Died</label>
+            <input type="radio" name="search_alive" id="search_alive-any" value="" />
+            <label for="search_alive-any">All</label>
+          </div>
+          <div class="search__text">
+            <input type="search" name="search_pattern" id="search_pattern" placeholder="Search a character">
+          </div>
+          <div class="search__btn">
+            <button type="submit" href="#"><i class="fas fa-search"></i></button>
+          </div>
+        </section>
+      </section>
+    </form>
+  </main>
+
+  <script src="js/got.js"></script>
+</body>
+
+</html>
