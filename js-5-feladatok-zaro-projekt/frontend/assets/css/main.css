@@ -1,0 +1,25 @@
+@import url('./datatable.css');
+
+body {
+  margin: 0;
+}
+
+main {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.popup--error {
+  background-color: #ff8888;
+  border: 1px solid #ff2222;
+  border-radius: 5px;
+  min-height: 30px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  z-index: 10;
+  padding: 10px;
+}

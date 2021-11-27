@@ -1,0 +1,65 @@
+.datatable {
+  display: table;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+.datatable__tr {
+  display: table-row;
+  background-color: #cecece;
+}
+
+.datatable__tr--read:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.datatable__td {
+  display: table-cell;
+  padding: 5px;
+}
+
+.datatable__tr--head .datatable__td {
+  padding: 15px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.datatable__tr--head  {
+  font-weight: bolder;
+  background-color: #444444;
+  color: #ffffff
+}
+
+.datatable__tr--add  {
+  background-color: #888888;
+  color: #ffffff
+}
+
+.datatable__btn {
+  outline: none;
+  background-color: transparent;
+  color: #000000;
+  padding: 5px;
+  margin-left: 5px;
+  border: none; /*1px solid #000000;*/
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.datatable__btn--cancel,
+.datatable__btn--undo {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+.datatable__btn--add,
+.datatable__btn--save {
+  color: #0000ff;
+  border-color: #0000ff;
+}
+
+.datatable__btn--edit {
+  color: #008000;
+  border-color: #008000;
+}
