@@ -1,13 +1,12 @@
 import Ajax from './ajax.js';
-
 class Users {
   #urlData;
   #urlList;
   #urlItem;
   list;
   map = new Map();
-  
-  constructor() {
+
+  constructor(lang) {
     this.#urlData = 'http://localhost:3000/users';
     this.#urlList = this.#urlData;
     this.#urlItem = this.#urlData + '/[id]'
@@ -41,38 +40,38 @@ class Users {
     return await resp.json();
   }
 
-  static validateName(value = '') {
+  static validateName(value = '', localization) {
     const ret = [];
 
     if (!value || value.toString().trim() === '')
-      ret.push('Name is required');
+      ret.push(localization.translate('NameRequired'));
 
     if (!value.match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/))
-      ret.push('Name must be full name with proper case');
+      ret.push(localization.translate('NameRegex'));
 
     return ret.length == 0 ? null : ret;
   }
 
-  static validateEmail(value) {
+  static validateEmail(value, localization) {
     const ret = [];
 
     if (!value || value.toString().trim() === '')
-      ret.push('Email is required');
+      ret.push(localization.translate('EmailRequired'));
 
     if (!value.match(/^[A-Za-z0-9]+@[A-Za-z0-9]+\.[\w]{2,3}$/))
-      ret.push('Email must be valid email address (fe: yourname@comapny.com)');
+      ret.push(localization.translate('EmailRegex'));
 
     return ret.length == 0 ? null : ret;
     }
 
-  static validateAddress(value) {
+  static validateAddress(value, localization) {
     const ret = [];
     
     if (!value || value.toString().trim() === '')
-      ret.push('Address is required');
+      ret.push(localization.translate('AddressRequired'));
 
     if (!value.match(/^[\d]+\s[\w\s]+$/))
-      ret.push('Address must be valid address (fe: 0 Main Street)');
+      ret.push(localization.translate('AddressRegex'));
 
     return ret.length == 0 ? null : ret;
   }

@@ -1,4 +1,36 @@
 {
+  "lang_en": [
+    { "id": "Name", "text": "Name"},
+    { "id": "Email", "text": "Email"},
+    { "id": "Address", "text": "Address"},
+    { "id": "UserCreated", "text": "User is created"},
+    { "id": "UserModified", "text": "User is modified"},
+    { "id": "UserDeleted", "text": "User is deleted"},
+    { "id": "ValidationErrors", "text": "Validation error(s):"},
+    { "id": "NameRequired", "text": "Name is required"},
+    { "id": "EmailRequired", "text": "Email is required"},
+    { "id": "AddressRequired", "text": "Address is required"},
+    { "id": "NameRegex", "text": "Name must be full name with proper case"},
+    { "id": "EmailRegex", "text": "Email must be valid email address (fe: yourname@comapny.com)"},
+    { "id": "AddressRegex", "text": "Address must be valid address (fe: 0 Main Street)"}
+  ],
+
+  "lang_hu": [
+    { "id": "Name", "text": "Név"},
+    { "id": "Email", "text": "Email"},
+    { "id": "Address", "text": "Cím"},
+    { "id": "UserCreated", "text": "Felhasználó létrehozva"},
+    { "id": "UserModified", "text": "Felhasználó adatai módosítva"},
+    { "id": "UserDeleted", "text": "Felhasználó törölve"},
+    { "id": "ValidationErrors", "text": "Validációs problémák:"},
+    { "id": "NameRequired", "text": "A Név kötelező"},
+    { "id": "EmailRequired", "text": "Az Email kötelező"},
+    { "id": "AddressRequired", "text": "A Cím kötelező"},
+    { "id": "NameRegex", "text": "Teljes névnek kell lennie, nagy kezdőbetűkkel"},
+    { "id": "EmailRegex", "text": "Érvényes email cím kell legyen (pl: yourname@comapny.com)"},
+    { "id": "AddressRegex", "text": "Érvényes cím kell legyen (pl: 0 Main Street)"}
+  ],
+
   "users": [
     {
       "id": 1,
@@ -601,4 +633,5 @@
       "address": "02784 Almo Trail"
     }
   ]
+
 }

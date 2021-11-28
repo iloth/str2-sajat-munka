@@ -129,7 +129,7 @@ class DataTable {
         input.value = value;
         input.classList.add('datatable__textbox');
         if (column.validatorFunction) {
-          input.addEventListener('keyup', (e) => { this.#validateField(e.target, column); });
+          input.addEventListener('keyup', (e) => { this.#validateInput(e.target, column); });
         }
         return input;
       default:
@@ -252,7 +252,7 @@ class DataTable {
 
   async #addButtonClick() {
     let data = this.#getFormData('.datatable__tr--add');
-    const validationResult = this.#validateRow(data);
+    const validationResult = this.#validateForm('.datatable__tr--add');
     if (validationResult === null || validationResult === true || validationResult.length === 0 || validationResult.size === 0) {
       const ret = await this.createRecordCallback(data);
       data = ret ? ret : data;
@@ -279,7 +279,7 @@ class DataTable {
 
   async #saveButtonClick(id) {
     let data = this.#getFormData('.datatable__tr--edit');
-    const validationResult = this.#validateRow(data);
+    const validationResult = this.#validateForm('.datatable__tr--edit');
     if (validationResult === null || validationResult === true || validationResult.length === 0 || validationResult.size === 0) {
       const ret = await this.updateRecordCallback(data);
       data = ret ? ret : data;
@@ -313,7 +313,7 @@ class DataTable {
     return data;
   }
 
-  #validateField(input, column) {
+  #validateInput(input, column) {
     let result;
     if (column.validatorFunction) {
       const ret = column.validatorFunction(input.value);
@@ -382,10 +382,13 @@ class DataTable {
     input.classList.remove('valid');
   }
 
-  #validateRow(data) {
+  #validateForm(selector) {
+    const data = this.#getFormData(selector)
+    const form = this.#tableNode.querySelector(selector);
     const result = new Map();
     this.columns.forEach((column) => {
-      const res = this.#validateField(data[column.fieldName], column);
+      const input = form.querySelector(`input[name="${column.fieldName}"]`);
+      const res = this.#validateInput(input, column);
       if (res) {
         result.set(column.fieldName, res);
       }

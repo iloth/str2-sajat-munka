@@ -48,6 +48,12 @@
   transition: height 1s linear, padding-top 1s linear, padding-bottom 1s linear
 }
 
+.message--closing .message__body {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: max-height 1s linear
+}
+
 .message--closing .message__close {
   visibility: hidden;
 }
