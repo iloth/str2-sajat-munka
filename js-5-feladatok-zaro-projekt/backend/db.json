@@ -12,7 +12,9 @@
     { "id": "AddressRequired", "text": "Address is required"},
     { "id": "NameRegex", "text": "Name must be full name with proper case"},
     { "id": "EmailRegex", "text": "Email must be valid email address (fe: yourname@comapny.com)"},
-    { "id": "AddressRegex", "text": "Address must be valid address (fe: 0 Main Street)"}
+    { "id": "AddressRegex", "text": "Address must be valid address (fe: 0 Main Street)"},
+    { "id": "NavTitle", "text": "JS Final project"},
+    { "id": "MainTitle", "text": "Administering users"}
   ],
 
   "lang_hu": [
@@ -28,7 +30,9 @@
     { "id": "AddressRequired", "text": "A Cím kötelező"},
     { "id": "NameRegex", "text": "Teljes névnek kell lennie, nagy kezdőbetűkkel"},
     { "id": "EmailRegex", "text": "Érvényes email cím kell legyen (pl: yourname@comapny.com)"},
-    { "id": "AddressRegex", "text": "Érvényes cím kell legyen (pl: 0 Main Street)"}
+    { "id": "AddressRegex", "text": "Érvényes cím kell legyen (pl: 0 Main Street)"},
+    { "id": "NavTitle", "text": "JS Témazáró Project"},
+    { "id": "MainTitle", "text": "Felhasználók kezelése"}
   ],
 
   "users": [

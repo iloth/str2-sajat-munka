@@ -47,6 +47,7 @@ class DataTable {
     this.columns.forEach((column) => {
       const td = document.createElement('div');
       td.classList.add('datatable__td');
+      td.dataset.field = column.fieldName;
       td.innerText = column.title;
       header.appendChild(td);
     });
@@ -402,6 +403,19 @@ class DataTable {
   }
 
   //#endregion
+
+  //#region Helpers
+  refreshColumnTitles() {
+    const header = this.#tableNode.querySelector('.datatable__tr--head');
+    if (header) {
+      this.columns.forEach((column) => {
+        const td = header.querySelector(`.datatable__td[data-field="${column.fieldName}"]`);
+        if (td) {
+          td.innerText = column.title;
+        }
+      });
+    }
+  }
 }
 
 class DataColumn {

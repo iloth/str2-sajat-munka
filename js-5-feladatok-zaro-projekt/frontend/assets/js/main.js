@@ -3,12 +3,51 @@ import { DataTable, DataColumn } from './datatable.js';
 import Messages from './messages.js';
 import Localization from './localization.js';
 
-const langCode = 'hu';
+let langCode = 'hu';
 const users = new Users();
 const dataTable = new DataTable();
 const localization = new Localization();
 
 const main = document.querySelector('main');
+
+const updateLocalizedItems = () => {
+  if (dataTable.columns) {
+    dataTable.columns[1].title = localization.translate('Name');
+    dataTable.columns[2].title = localization.translate('Email');
+    dataTable.columns[3].title = localization.translate('Address');
+    dataTable.refreshColumnTitles();
+  }
+
+  document.querySelector('.navigation__left h3').innerText = localization.translate('NavTitle');
+  document.querySelector('header h1').innerText = localization.translate('MainTitle');
+};
+
+const selectLanguage = async (code) => {
+  const lang = localization.languages.get(code);
+  const dropdownValue = document.querySelector('.language_dropdown .dropdown__value');
+  dropdownValue.innerHTML = `<div class="dropdown__value" data-value="${lang.code}"><img src="${lang.flagUrl}" alt="Flag"> <span>${lang.name}</span> <i class='fas fa-angle-down'></i></div>`;
+  await localization.load(code);
+  langCode = code;
+};
+
+const configureLanguages = () => {
+  const dropdown = document.querySelector('.language_dropdown');
+  const dropdownItems = dropdown.querySelector('.dropdown__items');
+
+  dropdownItems.innerHTML = '';
+
+  localization.languages.forEach((value, key) => {
+    const option = document.createElement('div');
+    option.innerHTML = `<div class="dropdown__item" data-value="${key}"><img src="${value.flagUrl}" alt="Flag"> <span>${value.name}</span></div>`;
+    option.addEventListener('click', () => {
+      selectLanguage(key)
+        .then(() => updateLocalizedItems());
+    });
+    dropdownItems.appendChild(option);
+  });
+
+  selectLanguage(langCode);
+};
 
 // #region configure dataTable
 const validationErrorHtml = (validationErrors) => {
@@ -98,12 +137,17 @@ const configureDatatable = () => {
 
 localization.load(langCode)
   .then(() => {
+    configureLanguages();
+    return Promise.resolve();
+  })
+  .then(() => {
     configureDatatable();
     return users.load();
   })
   .then(() => {
     main.innerHTML = '';
     main.appendChild(dataTable.getHtmlNode(users.list));
+    updateLocalizedItems();
   })
   .catch((error) => {
     Messages.showError(error);

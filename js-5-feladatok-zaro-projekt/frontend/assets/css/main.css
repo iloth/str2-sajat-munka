@@ -30,3 +30,57 @@ main {
   list-style: none;
   padding-left: 10px;
 }
+
+.navigation {
+  display: table;
+  width: 100%;
+  background-color: #8888ff;
+}
+
+.navigation__left {
+  display: table-cell;
+  padding: 10px;
+}
+
+.navigation__right {
+  display: table-cell;
+  vertical-align: center;
+  text-align: right;
+  padding: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+}
+
+.dropdown__items {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+.dropdown__item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown__item:hover {
+  background-color: #cecece;
+}
+
+.dropdown:hover .dropdown__items {
+  display: block;
+}
+
+.dropdown img {
+  height: 1em;
+}
