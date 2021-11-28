@@ -1,0 +1,55 @@
+.messages {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+}
+
+.message {
+  position: relative;
+  min-width: 200px;
+  padding: 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.message__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.message--error {
+  background-color: #ff000055;
+  border-color: #ff0000;
+  color: #440000;
+}
+
+.message--info {
+  background-color: #0000ff55;
+  border-color: #0000ff;
+  color: #000044;
+}
+
+.message--success {
+  background-color: #00ff0055;
+  border-color: #00ff00;
+  color: #004400;
+}
+
+.message--closing {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: height 1s linear, padding-top 1s linear, padding-bottom 1s linear
+}
+
+.message--closing .message__close {
+  visibility: hidden;
+}
+
+

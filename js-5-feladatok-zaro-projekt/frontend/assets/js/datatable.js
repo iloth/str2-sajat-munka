@@ -75,6 +75,12 @@ class DataTable {
       }
       if (!read) {
         td.appendChild(this.#getColumnEditorNode(column, data[column.fieldName]));
+
+        const valErr = document.createElement('div');
+        valErr.classList.add('datatable__valerr');
+
+        td.appendChild(valErr);
+
       }
       row.appendChild(td);
     });
@@ -116,16 +122,14 @@ class DataTable {
     switch(column.editorType) {
       case 'text':
       case 'email':
-      case 'tel':
-      case 'url':
-      case 'date':
       case 'hidden':
         const input = document.createElement('input');
         input.type = column.editorType;
         input.name = column.fieldName;
         input.value = value;
+        input.classList.add('datatable__textbox');
         if (column.validatorFunction) {
-          input.addEventListener('keyup', (e) => { this.#validateField(e.target.value, column); });
+          input.addEventListener('keyup', (e) => { this.#validateField(e.target, column); });
         }
         return input;
       default:
@@ -241,6 +245,7 @@ class DataTable {
     inputs.forEach((input) => {
       if (input.type != 'button') {
         input.value = this.#defaultData[input.name];
+        this.#removeValidationMark(input);
       }
     });
   }
@@ -308,22 +313,74 @@ class DataTable {
     return data;
   }
 
-  #validateField(value, column) {
+  #validateField(input, column) {
+    let result;
     if (column.validatorFunction) {
-      const ret = column.validatorFunction(value);
+      const ret = column.validatorFunction(input.value);
       if (ret === true || ret === null || ret === undefined) {
-        return null;
+        result = null;
       } else if (ret === false) {
-        return 'invalid';
-      } else if (Array.isArray(ret)) {
-        return ret;
-      } else {
-        return ret.toString();
+        result = 'invalid';
+      } else {        
+        result = ret;
       }
     } else {
-      return null;
+      result = null;
     }
-}
+  
+    if (result) {
+      this.#showValidationError(input, result);
+    } else {
+      this.#hideValidationError(input);
+    }
+
+    return result;
+  }
+
+  #showValidationError(input, error) {
+    const td = input.parentNode;
+    const valErr = td.querySelector('.datatable__valerr');
+    
+    let listItems = [];
+    if (Array.isArray(error)) {
+      listItems = error.map((err) => {
+        const li = document.createElement('li');
+        li.innerText = err;
+        return li;
+      });
+    } else {
+      const li = document.createElement('li');
+      li.innerText = error;
+      listItems = [li]
+    }
+
+    const ul = document.createElement('ul');
+    listItems.forEach((li) => { ul.appendChild(li); });
+
+    valErr.innerHTML = '';
+    valErr.appendChild(ul);
+
+    input.classList.add('invalid');
+    input.classList.remove('valid');
+  }
+
+  #hideValidationError(input) {
+    const td = input.parentNode;
+    const valErr = td.querySelector('.datatable__valerr');
+    valErr.innerHTML = '';
+  
+    input.classList.remove('invalid');
+    input.classList.add('valid');
+  }
+
+  #removeValidationMark(input) {
+    const td = input.parentNode;
+    const valErr = td.querySelector('.datatable__valerr');
+    valErr.innerHTML = '';
+  
+    input.classList.remove('invalid');
+    input.classList.remove('valid');
+  }
 
   #validateRow(data) {
     const result = new Map();

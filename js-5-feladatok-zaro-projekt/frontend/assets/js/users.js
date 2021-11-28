@@ -42,27 +42,39 @@ class Users {
   }
 
   static validateName(value = '') {
+    const ret = [];
+
     if (!value || value.toString().trim() === '')
-      return ['is required'];
+      ret.push('Name is required');
 
     if (!value.match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/))
-      return ['must be full name with proper case']
+      ret.push('Name must be full name with proper case');
+
+    return ret.length == 0 ? null : ret;
   }
 
   static validateEmail(value) {
+    const ret = [];
+
     if (!value || value.toString().trim() === '')
-      return ['Email is required'];
+      ret.push('Email is required');
 
     if (!value.match(/^[A-Za-z0-9]+@[A-Za-z0-9]+\.[\w]{2,3}$/))
-      return ['must be valid email address (fe: yourname@comapny.com)']
-  }
+      ret.push('Email must be valid email address (fe: yourname@comapny.com)');
+
+    return ret.length == 0 ? null : ret;
+    }
 
   static validateAddress(value) {
+    const ret = [];
+    
     if (!value || value.toString().trim() === '')
-      return ['Address is required'];
+      ret.push('Address is required');
 
     if (!value.match(/^[\d]+\s[\w\s]+$/))
-      return ['must be valid address (fe: 0 Main Street)']
+      ret.push('Address must be valid address (fe: 0 Main Street)');
+
+    return ret.length == 0 ? null : ret;
   }
 }
 

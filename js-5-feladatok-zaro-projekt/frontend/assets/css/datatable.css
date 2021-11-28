@@ -63,3 +63,28 @@
   color: #008000;
   border-color: #008000;
 }
+
+.datatable__textbox {
+  outline: none;
+  border: 1px solid #000000;
+  border-radius: 2px;
+}
+
+.datatable__textbox.valid {
+  border-color: #008000;
+}
+
+.datatable__textbox.invalid {
+  border-color: #800000;
+}
+
+.datatable__valerr {
+  color: #800000;
+}
+
+.datatable__valerr ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
