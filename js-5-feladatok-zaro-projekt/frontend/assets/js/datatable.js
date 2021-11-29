@@ -71,6 +71,13 @@ class DataTable {
     this.columns.forEach((column) => {
       const td = document.createElement('div');
       td.classList.add('datatable__td');
+
+      const label = document.createElement('label');
+      label.classList.add('datatable__label');
+      label.dataset.field = column.fieldName;
+      label.innerText = column.title + ':';
+      td.appendChild(label);
+
       if (read || column.readonly) {        
         td.appendChild(document.createTextNode(data[column.fieldName]));
       }
@@ -415,6 +422,14 @@ class DataTable {
         }
       });
     }
+
+    this.columns.forEach((column) => {
+      const labels = this.#tableNode.querySelectorAll(`.datatable__label[data-field="${column.fieldName}"]`);
+      labels.forEach((label) => {
+        label.innerText = column.title;
+      });
+    });
+
   }
 }
 

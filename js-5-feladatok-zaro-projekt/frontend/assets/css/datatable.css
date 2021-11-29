@@ -30,7 +30,8 @@
   color: #ffffff
 }
 
-.datatable__tr--add  {
+.datatable__tr--add,
+.datatable__tr--edit  {
   background-color: #888888;
   color: #ffffff
 }
@@ -87,4 +88,32 @@
   list-style-type: none;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.datatable__label {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .datatable {
+    width: min-content;
+  }
+  .datatable__tr--head {
+    display: none;
+  }
+
+  .datatable__td {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .datatable__label {
+    display: inline-block;
+    width: 120px;
+  }
+
+  .datatable__td input {
+    display: inline-block;
+  }
+  
 }
