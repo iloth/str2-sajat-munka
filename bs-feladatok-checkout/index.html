@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Check Out</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" 
+      crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+      crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" 
+      crossorigin="anonymous">
+  </script>
+  <script src="assets/js/main.js"></script>
+</head>
+<body>
+  <main>
+    <div class="container bg-light">
+        <div class="row">
+          <div class="col-12 col-sm-4 order-sm-12 pt-2 mb-3 mb-sm-0">
+            <div class="row">
+              <div class="col-10"><h5 class="text-secondary">Your cart</h5></div>
+              <div class="col-2 text-right"><h5 class="badge badge-pill badge-secondary">3</h5></div>
+            </div>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <span class="float-right">$12</span>
+                <h6 class="mb-0">Product name</h6>
+                <small>Brief description</small>
+              </li>
+              <li class="list-group-item">
+                <span class="float-right">$8</span>
+                <h6 class="mb-0">Second product</h6>
+                <small>Brief description</small>
+              </li>
+              <li class="list-group-item">
+                <span class="float-right">$5</span>
+                <h6 class="mb-0">Third item</h6>
+                <small>Brief description</small>
+              </li>
+              <li class="list-group-item text-success bg-light">
+                <span class="float-right">-$5</span>
+                <h6 class="mb-0">Promo code</h6>
+                <small>EXAMPLE CODE</small>
+              </li>
+              <li class="list-group-item">
+                <span class="float-right">$20</span>
+                <span>Total (USD)</span>                
+              </li>
+            </ul>
+            <ul class="list-group">
+              <li class="list-group-item px-2">
+                <form action="#">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Promo code" aria-label="Recipient's username" aria-describedby="button-addon">
+                      <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" id="button-addon">Redeem</button>
+                      </div>
+                    </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-8 order-sm-1 mb-3 mb-sm-5">
+            <form>
+              <h5>Billing Address</h5>
+              <div class="form-group">
+                <label for="billingFirstName">First name</label>
+                <input type="text" class="form-control" id="billingFirstName">
+              </div>
+              <div class="form-group">
+                <label for="billingLastName">Last name</label>
+                <input type="text" class="form-control" id="billingLastName">
+              </div>
+              <div class="form-group">
+                <label for="billingUserName">User name</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="billingUserName" placeholder="Username">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="billingEmail">Email</label> <span class="text-secondary">(Optional)</span>
+                <input type="email" class="form-control" id="billingEmail" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="billingAddress">Address</label>
+                <input type="text" class="form-control" id="billingAddress" placeholder="1234 Main St">
+              </div>
+              <div class="form-group">
+                <label for="billingAddress2">Address</label> <span class="text-secondary">(Optional)</span>
+                <input type="text" class="form-control" id="billingAddress2" placeholder="Apartment or suite">
+              </div>
+              <div class="form-group">
+                <label for="billingCountry">Country</label>
+                <select class="custom-select" id="billingCountry">
+                  <option selected>Choose...</option>
+                  <option value="US">USA</option>
+                  <option value="HU">Magyarország</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="billingState">State</label>
+                <select class="custom-select" id="billingState">
+                  <option selected>Choose...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="billingZip">Zip</label>
+                <input type="text" class="form-control" id="billingZip">
+              </div>
+              <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="billingShippingSame">
+                  <label class="custom-control-label" for="billingShippingSame">Shipping address is the same as my billing address</label> 
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="billingSave">
+                  <label class="custom-control-label" for="billingSave">Save this information for next time0</label> 
+                </div>
+              </div>
+              
+              <hr>
+              <h5>Payment</h5>
+              <div class="form-group">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="paymentCreditCard" name="paymentType" class="custom-control-input" checked
+                    data-target="#paymentCreditCardForm">
+                  <label class="custom-control-label" for="paymentCreditCard">Credit Card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="paymentDebitCard" name="paymentType" class="custom-control-input"
+                    data-target="#paymentDebitCardForm">
+                  <label class="custom-control-label" for="paymentDebitCard">Debit Card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="paymentPaypal" name="paymentType" class="custom-control-input"
+                    data-target="#paymentPaypalForm">
+                  <label class="custom-control-label" for="paymentPaypal">Paypal</label>
+                </div>
+              </div>
+              <div id="paymentTypeForms">
+                <div id="paymentCreditCardForm" class="collapse show" data-parent="#paymentTypeForms">
+                  <div class="form-group">
+                    <label for="creditCardName">Name on card</label>
+                    <input type="text" class="form-control" id="creditCardName" aria-describedby="creditNameHelper">
+                    <small id="creditNameHelper" class="form-text text-muted">Full name as displayed on card</small>
+                  </div>      
+                  <div class="form-group">
+                    <label for="creditCardNo">Car Number</label>
+                    <input type="text" class="form-control" id="creditCardNo">
+                  </div>      
+                  <div class="form-group">
+                    <label for="creditCardExp">Car Number</label>
+                    <input type="text" class="form-control" id="creditCardExp">
+                  </div>      
+                  <div class="form-group">
+                    <label for="creditCardCVV">Car Number</label>
+                    <input type="password" class="form-control" id="creditCardCVV">
+                  </div>      
+                </div>
+                <div id="paymentDebitCardForm" class="collapse" data-parent="#paymentTypeForms">
+                  <div class="form-group">
+                    <label for="debitCardName">Name on card</label>
+                    <input type="text" class="form-control" id="debitCardName" aria-describedby="debitNameHelper">
+                    <small id="debitNameHelper" class="form-text text-muted">Full name as displayed on card</small>
+                  </div>      
+                  <div class="form-group">
+                    <label for="debitCardNo">Car Number</label>
+                    <input type="text" class="form-control" id="debitCardNo">
+                  </div>      
+                  <div class="form-group">
+                    <label for="debitCardExp">Car Number</label>
+                    <input type="text" class="form-control" id="debitCardExp">
+                  </div>      
+                  <div class="form-group">
+                    <label for="debitCardCVV">Car Number</label>
+                    <input type="password" class="form-control" id="debitCardCVV">
+                  </div>      
+                </div>
+                <div id="paymentPaypalForm" class="collapse" data-parent="#paymentTypeForms">
+                  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now">
+                </div>
+              </div>
+              <hr>
+              <button type="submit" class="btn btn-primary w-100">Continue to checkout</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
