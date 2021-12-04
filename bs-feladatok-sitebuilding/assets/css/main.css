@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+/* html {
+  scroll-behavior: smooth;
+}
+ */
+#top {
+  background-image: url('../img/bg-pattern.png'), linear-gradient(to right, #da2431, #7a4397);
+}
+
+#top img {
+  height: 80%;
+  width: auto;
+}
+
+.bullshit {
+  font-size: 3em;
+  font-family: Catamaran, Helvetica, Arial, sans-serif;
+}
+
+.stores img {
+  width: 200px;
+}
+
+#download {
+  background-color: #fdca4a;
+}
+
+#features .fas {
+  font-size: 8em;
+  color: #b12f5b;
+}
+
+#start {
+  background-image: url('../img/bg-cta.jpg');
+  background-size: cover;
+}
+
+#start .container > .row {
+  min-height: 600px;
+}
+
+#contact {
+  background-color: #fcc949;
+}
+
+#contact .fa-heart {
+  color: #dd4c39;
+}
+
+#contact .social.twitter .fa-circle::before {
+  color: #1d9cf0E6;
+}
+
+#contact .social.twitter:hover .fa-circle::before {
+  color: #1D9BF0FF;
+}
+
+#contact .social.facebook .fa-circle::before {
+  color: #1877f2E6;
+}
+
+#contact .social.facebook:hover .fa-circle::before {
+  color: #1877f2FF;
+}
+
+#contact .social.google .fa-circle::before {
+  color: #DD5144E6;
+}
+
+#contact .social.google:hover .fa-circle::before {
+  color: #DD5144FF;
+}
+
+.filter {
+  backdrop-filter: brightness(60%);
+}
+
+.navbar {
+  backdrop-filter: brightness(60%);
+}
+
+.navbar-brand {
+  color: #f6d459;;
+}  
+
+.navbar-brand:hover {
+  color: #ffffff;;
+}  
+
+.nav-link, .navbar-toggler {
+  color: #f6d459;
+}  
+
+.nav-link:hover, .navbar-toggler:hover {
+  color: #ffffff;
+}  
+
+.btn-outline-light:hover {
+  background-color: #fdcc52;
+  border-color: #fdcc52;
+  transition: background-color .3s, border-color .3s;
+}  
+
+.nav-link.active {
+  color: #ffffff;
+}  
+
+.font-lato {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+.font-catamaran {
+  font-family: Muli, Helvetica, Arial, sans-serif;
+}
+
+.font-muli {
+  font-family: Muli, Helvetica, Arial, sans-serif;
+}
+
+footer a.text-secondary:hover {
+  color: #f6d459 !important;
+}
+
+@media screen and (min-width: 992px) {
+  #top .container > .row {
+    min-height: 800px;
+  }
+  #download .container > .row {
+    min-height: 500px;
+  }
+
+  #start .container > .row {
+    min-height: 600px;
+  }
+
+  #contact .container > .row {
+    min-height: 300px;
+  }
+
+}
