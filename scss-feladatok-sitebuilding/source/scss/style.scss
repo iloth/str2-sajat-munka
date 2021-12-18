@@ -1,0 +1,114 @@
+@use 'colors';
+@use 'variables' as var;
+@use 'mixins/mixins' as mix;
+
+@import 'general';
+@import 'nav';
+
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+.home {
+  background-image: url('../img/bg-pattern.png'), linear-gradient(to right, colors.$red, colors.$purple);
+  padding-top: var.$section-padding;
+  padding-bottom: var.$section-padding;
+
+  &__title {
+    @include mix.center;
+  }
+  
+  &__phone {
+    @include mix.center;
+  }  
+}
+
+.download {
+  background-color: colors.$yellow;
+  padding-top: var.$section-padding;
+  padding-bottom: var.$section-padding;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__store {
+    text-align: center;
+
+    &--google {
+      @include mix.desktop {
+        text-align: right;
+      }
+    }
+    &--apple {
+      @include mix.desktop {
+        text-align: left;
+      }
+    }
+
+    & img {
+      width: 200px;
+    }
+  }
+}
+
+.features {
+  background-color: #fff;
+  padding-top: var.$section-padding;
+  padding-bottom: var.$section-padding;
+  text-align: center;
+
+  &__phone {
+    @include mix.center;
+
+  }
+
+  &__list {
+    @include mix.center;
+  }
+
+  &__item {
+    text-align: center;
+    margin-bottom: 4em;
+    & .fas {
+      font-size: 6em;
+      color: #b12f5b;    
+    }
+  }
+}
+
+.start {
+  background-image: url('../img/bg-cta.jpg');
+  background-size: cover;
+  
+  & .filter {
+    padding-top: var.$section-padding;
+    padding-bottom: var.$section-padding;
+  }
+}
+
+.contact {
+  background-color: colors.$yellow;
+  padding-top: var.$section-padding;
+  padding-bottom: var.$section-padding;
+  text-align: center;
+}
+
+.footer {
+  @include mix.center;
+  flex-direction: column;
+  background-color: colors.$dark-gray;
+  padding-top: var.$section-padding / 4;
+  padding-bottom: var.$section-padding / 4;
+  color: colors.$gray;
+  font-family: Muli, Helvetica, Arial, sans-serif;
+
+  &__link {
+    color: inherit;
+    font-family: inherit;
+
+    &:hover {
+      color: colors.$yellow;
+    }
+  }
+}

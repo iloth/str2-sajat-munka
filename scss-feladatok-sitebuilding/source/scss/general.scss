@@ -1,0 +1,115 @@
+@use 'colors';
+
+h2 {
+  font-family: Catamaran, Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  font-weight: normal;
+
+  &.white {
+    color: colors.$white
+  }
+  &.black {
+    color: colors.$black
+  }
+}
+
+h3 {
+  font-family: Catamaran, Helvetica, Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: normal;
+
+  &.white {
+    color: colors.$white
+  }
+  &.black {
+    color: colors.$black
+  }
+}
+
+h4 {
+  font-family: Catamaran, Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+
+  &.white {
+    color: colors.$white
+  }
+  &.black {
+    color: colors.$black
+  }
+}
+
+span {
+  font-family: Muli, Helvetica, Arial, sans-serif;
+  &.white {
+    color: colors.$white
+  }
+  &.black {
+    color: colors.$black
+  }
+  &.subtitle {
+    display: block;
+    margin-bottom: 2em;
+  }
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(60%);
+}
+
+.button {
+  border: 1px solid #fff;
+  border-radius: 50rem;
+  color: colors.$button;
+  outline: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  transition: color .3s, border-color .3s;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+
+  &:hover {
+    color: colors.$button-hover;
+    border-color: colors.$button-hover;
+    cursor: pointer;
+  }
+}
+
+.social {
+  &.twitter {
+    & .fa-circle::before {
+      color: colors.$twitter;
+    }
+
+    &:hover .fa-circle::before {
+      color: colors.$twitter-hover;
+    }
+  } 
+  
+  &.facebook {
+    & .fa-circle::before {
+      color: colors.$facebook;
+    }
+
+    &:hover .fa-circle::before {
+      color: colors.$facebook-hover;
+    }
+  } 
+  
+  &.google {
+    & .fa-circle::before {
+      color: colors.$gplus;
+    }
+
+    &:hover .fa-circle::before {
+      color: colors.$gplus-hover;
+    }
+
+  }
+}
+
+.fa-heart {
+  color: colors.$heart;
+}

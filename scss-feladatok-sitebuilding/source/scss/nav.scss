@@ -1,0 +1,91 @@
+@use 'colors';
+@use 'mixins/mixins' as mix;
+
+.nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  color: colors.$link;
+  padding: 0 2em 0 2em;
+  background-color: #00000040;
+  font-family: Catamaran, Helvetica, Arial, sans-serif;;
+  z-index: 1;
+
+  &__brand {
+    line-height: 3em;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: colors.$link-hover;
+    }
+  }
+
+  &__toggler {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    margin-left: auto;
+
+    &:hover {
+      color: colors.$link-hover;
+    }
+
+    @include mix.desktop {
+      display: none;
+    }
+  }
+
+  &__items {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+
+    &.visible {
+      display: block;
+      background-color: #00000040;
+      padding: 0 2em;
+    }
+
+    @include mix.desktop {
+      margin-left: auto;
+      display: block;
+      position: unset;
+      right: unset;
+      top: unset;
+      background-color: unset !important;
+      padding: unset !important;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: none;
+    display: block;
+    text-transform: uppercase;
+    padding-left: .5em;
+
+    @include mix.desktop {
+      display: inline-block;
+    }
+  }
+
+  &__link {
+    line-height: 3em;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: colors.$link-hover;
+    }
+  }
+}
